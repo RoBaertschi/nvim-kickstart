@@ -562,6 +562,14 @@ require('lazy').setup({
 
         astro = {},
 
+        zls = {
+          cmd = { '/home/robin/.zvm/bin/zls' },
+        },
+
+        angularls = {
+          filetypes = { 'typescript', 'html', 'typescriptreact', 'angular.html', 'typescript.tsx' },
+        },
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
