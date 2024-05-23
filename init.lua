@@ -763,6 +763,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'rose-pine-moon'
       vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+      vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
 
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
