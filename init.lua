@@ -366,6 +366,9 @@ require('lazy').setup({
             require('telescope.themes').get_dropdown(),
           },
         },
+        defaults = {
+          file_ignore_patterns = { 'target' },
+        },
       }
 
       -- Enable telescope extensions, if they are installed
