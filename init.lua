@@ -566,13 +566,15 @@ require('lazy').setup({
         astro = {},
 
         zls = {
-          cmd = { '/home/robin/.zvm/bin/zls' },
+          cmd = { 'zls' },
         },
 
         angularls = {
           filetypes = { 'typescript', 'html', 'typescriptreact', 'angular.html', 'typescript.tsx' },
         },
 
+        mesonlsp = {},
+        gopls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
@@ -616,6 +618,10 @@ require('lazy').setup({
             require('lspconfig')[server_name].setup(server)
           end,
         },
+      }
+
+      require('lspconfig').zls.setup {
+        cmd = { 'zls' },
       }
     end,
   },
