@@ -156,9 +156,9 @@ vim.opt.scrolloff = 10
 
 vim.g.c_syntax_for_h = 1
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- [[ Basic Keymaps ]]
@@ -845,7 +845,18 @@ require('lazy').setup({
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
       ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      local configs = require('nvim-treesitter.configs').setup(opts)
+
+      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+      parser_config.tup = {
+        install_info = {
+          url = 'https://github.com/RoBaertschi/tree-sitter-tup',
+          files = { 'src/parser.c', 'src/scanner.c' },
+          branch = 'main',
+          requires_generate_from_grammar = false,
+        },
+        filetype = 'tup',
+      }
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
