@@ -593,10 +593,27 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
+        -- ols = {
+        --   path = { '~/aur/ols/ols' },
+        --   -- cmd = { '' },
+        --   settings = {
+        --     cmd = { 'ols' },
+        --   },
+        -- },
+
         astro = {},
 
         zls = {
+          path = { '~/.zvm/bin/zls' },
           cmd = { 'zls' },
+          settings = {
+            zig = {
+              zls = {
+                path = { '~/.zvm/bin/zls' },
+                cmd = { 'zls' },
+              },
+            },
+          },
         },
 
         angularls = {
@@ -653,6 +670,8 @@ require('lazy').setup({
       require('lspconfig').zls.setup {
         cmd = { 'zls' },
       }
+
+      require('lspconfig')['ols'].setup {}
     end,
   },
 

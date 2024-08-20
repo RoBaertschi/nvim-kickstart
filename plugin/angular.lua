@@ -1,5 +1,5 @@
 vim.filetype.add {
-  pattern = { ['.*%.component%.html'] = 'angular.html' },
+  pattern = { ['.*%.component%.html'] = 'angular.html', ['.*%.vert'] = 'glsl', ['.*%.frag'] = 'glsl' },
 }
 
 vim.api.nvim_create_autocmd('FileType', {
