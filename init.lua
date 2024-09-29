@@ -235,7 +235,14 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  { dir = '/home/robin/plugins/modeline2.nvim/' },
+  {
+    dir = '/home/robin/plugins/modeline2.nvim/',
+    config = function(_, opts)
+      require('modeline2').setup(opts)
+    end,
+    ---@type modeline2.Config
+    opts = {},
+  },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
